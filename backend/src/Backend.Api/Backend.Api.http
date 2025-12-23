@@ -4,3 +4,15 @@ GET {{Backend.Api_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+### Health
+GET {{Backend.Api_HostAddress}}/health
+
+### Ping
+GET {{Backend.Api_HostAddress}}/ping
+
+### Unity client config
+GET {{Backend.Api_HostAddress}}/api/config
+
+### AWS status (requires configured credentials/permissions)
+GET {{Backend.Api_HostAddress}}/api/config/aws/status
