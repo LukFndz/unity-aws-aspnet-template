@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5e0460e84149946b41d9eb71a7313f, type: 3}
   m_Name: ApiConfig_AWS
   m_EditorClassIdentifier: 
-  baseUrl: http://3.144.197.85:5000
+  baseUrl: http://PUBLIC_IP:5000
