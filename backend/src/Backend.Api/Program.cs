@@ -14,6 +14,9 @@ if (builder.Environment.IsDevelopment())
     builder.Services.AddSwaggerGen();
 }
 
+builder.Configuration
+    .AddEnvironmentVariables();
+
 builder.Services.Configure<ApplicationOptions>(
     builder.Configuration.GetSection("Application"));
 
