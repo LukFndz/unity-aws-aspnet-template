@@ -89,3 +89,6 @@ S3 (Cloud files)
 IAM Roles (no hardcoded credentials)
 
 See: docs/aws-env-vars.md
+
+⚠️ For WebGL and Mobile builds, HTTPS is required.
+HTTP can be enabled only for local development.
