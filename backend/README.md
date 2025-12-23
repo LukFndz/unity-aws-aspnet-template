@@ -1,137 +1,52 @@
-# Unity + AWS + ASP.NET Template
+# Backend – ASP.NET Web API
 
-A clean, scalable template to connect Unity projects with an ASP.NET Web API backend deployed on AWS.
+This backend is a clean, cloud-ready ASP.NET Web API built as a reusable template for Unity projects.
 
-This repository is **game-agnostic** and focuses on:
-- Clean architecture
-- Cloud-ready backend
-- Reusable Unity API client
-- Clear documentation
+It is intentionally **game-agnostic** and focuses on architecture and infrastructure rather than domain logic.
 
----
+## 🧱 Architecture
 
-## Features
+The backend follows Clean Architecture principles:
 
-- ASP.NET Web API (.NET 8)
-- Clean Architecture (Domain / Application / Infrastructure)
-- AWS-ready configuration (EC2, RDS, S3)
-- Unity reusable REST API client
-- No gameplay code
-- Template
-
----
-
-## Architecture Overview
-
-Unity Client
-↓ HTTP / JSON
-ASP.NET Web API (EC2)
-↓
-PostgreSQL (RDS)
-↓
-S3 (Cloud Storage)
-
-Unity acts strictly as a **client**.  
-The backend owns infrastructure and cloud concerns.
-
----
-
-## Repository Structure
-
-unity-aws-aspnet-template/
-├── backend/
-│ └── src/
-│ ├── Backend.Api
-│ ├── Backend.Application
-│ ├── Backend.Domain
-│ └── Backend.Infrastructure
+Backend.Api
+├── Controllers (HTTP endpoints)
+├── Program.cs (composition root)
 │
-├── unity-client/
-│ └── Assets/
-│ └── Scripts/
-│ └── Networking/
+Backend.Application
+├── Use cases
+├── DTOs
 │
-├── docs/
-│ ├── aws-env-vars.md
-│ └── decisions.md
+Backend.Domain
+├── Pure domain models
 │
-└── README.md
+Backend.Infrastructure
+├── Persistence
+├── AWS integrations
 
 ---
 
-## Getting Started
-
-### Backend (Local)
-
-bash
-cd backend
+## 🚀 Running Locally
 dotnet run --project src/Backend.Api
-Test: http://localhost:5000/ping
 
-## Unity
+## Status Check Endpoint
+GET /ping
 
-Copy unity-client/Assets/Scripts/Networking into your Unity project
+## AWS Deployment Model
+Hosted on EC2
+Nginx used as reverse proxy
+systemd manages process lifecycle
+Configuration via environment variables
 
-Create an ApiConfig ScriptableObject
-
-Set BaseUrl (e.g. http://localhost:5000)
-
-Use ApiClient to communicate with the backend
-
-## AWS Deployment
-
-This template is prepared for AWS but does not deploy automatically.
-
-Supported services:
-EC2 (API hosting)
-RDS (PostgreSQL)
-S3 (Cloud files)
-IAM Roles (no hardcoded credentials)
-
-See: docs/aws-env-vars.md
-
----
-
-## Security Notes
-
-- HTTP is allowed only for local development.
-- HTTPS is required for WebGL and mobile builds.
-- AWS credentials are never stored in the repository.
-- All secrets are provided through environment variables.
-
----
+The backend listens internally on port 5000 and is exposed publicly through Nginx.
 
 ## Redeploy Workflow
 
 When backend code changes:
 1. Publish locally:
 dotnet publish src/Backend.Api -c Release -o publish
+
 2. Copy to EC2:
 scp -i your-key.pem -r publish/* ec2-user@YOUR_IP:/var/www/backend-api
+
 3. Restart service:
 sudo systemctl restart backend-api
-
-## Verified Setup
-
-## Out of Scope (by design)
-
-This template intentionally does NOT include:
-Authentication / Authorization
-Gameplay-specific logic
-Database schema
-WebSockets / real-time systems
-CI/CD pipelines
-
-These concerns vary per project and should be implemented as needed.
-
-This template has been tested with:
-ASP.NET 8
-Amazon Linux 2023
-EC2 (t2.micro)
-Nginx reverse proxy
-Unity Editor (HTTP allowed in development)
-
-----
-
-⚠️ For WebGL and Mobile builds, HTTPS is required.
-HTTP can be enabled only for local development.
