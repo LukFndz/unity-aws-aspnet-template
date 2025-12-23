@@ -81,3 +81,12 @@ WebSockets / real-time features
 CI/CD pipelines
 
 These concerns vary per project and should be implemented as needed.
+
+---
+
+## 🧭 Branching Strategy
+
+This repository was built incrementally.
+Step branches (`step/*`) reflect the development process and can be used as reference points.
+
+The `main` branch always represents the stable template.
