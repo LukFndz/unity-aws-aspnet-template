@@ -31,29 +31,6 @@ ASP.NET Web API (EC2)
 
 ---
 
-## 📁 Repository Structure
-
-unity-aws-aspnet-template/
-├── backend/
-│ └── src/
-│ ├── Backend.Api
-│ ├── Backend.Application
-│ ├── Backend.Domain
-│ └── Backend.Infrastructure
-│
-├── unity-client/
-│ └── Assets/
-│ └── Scripts/
-│ └── Networking/
-│
-├── docs/
-│ ├── architecture.md
-│ └── aws-env-vars.md
-│
-└── README.md
-
----
-
 ## 🚀 Getting Started
 
 ### Backend (Local)
