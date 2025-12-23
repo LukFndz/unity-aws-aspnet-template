@@ -38,3 +38,4 @@ C:\Users\Luk\Desktop\unity-aws-aspnet-template\backend\src\Backend.Api\bin\Debug
 C:\Users\Luk\Desktop\unity-aws-aspnet-template\backend\src\Backend.Api\bin\Debug\net8.0\Backend.Infrastructure.pdb
 C:\Users\Luk\Desktop\unity-aws-aspnet-template\backend\src\Backend.Api\bin\Debug\net8.0\Backend.Domain.pdb
 C:\Users\Luk\Desktop\unity-aws-aspnet-template\backend\src\Backend.Api\obj\Debug\net8.0\Backend.Api.sourcelink.json
+C:\Users\Luk\Desktop\unity-aws-aspnet-template\backend\src\Backend.Api\bin\Debug\net8.0\appsettings.Production.json
