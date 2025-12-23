@@ -19,11 +19,7 @@ This repository is **game-agnostic** and focuses on clean architecture, cloud re
 
 ## 🧱 High-Level Architecture
 
-Unity Client
-↓ HTTP / HTTPS
-Nginx (Reverse Proxy)
-↓
-ASP.NET Web API (EC2)
+Unity Client => HTTP / HTTPS => Nginx (Reverse Proxy) => ASP.NET Web API (Deployed at AWS EC2)
 
 - Unity communicates strictly via HTTP
 - Backend owns infrastructure concerns
@@ -53,10 +49,10 @@ ASP.NET Web API (EC2)
 ## AWS Deployment
 
 This template has been deployed and tested using:
-EC2 (Amazon Linux 2023)
-Nginx reverse proxy
-systemd service
-ASP.NET 8 runtime
+- EC2 (Amazon Linux 2023)
+- Nginx reverse proxy
+- systemd service
+- ASP.NET 8 runtime
 
 Deployment is manual by design to keep the template infrastructure-agnostic.
 
@@ -64,10 +60,10 @@ Deployment is manual by design to keep the template infrastructure-agnostic.
 
 ## Security Notes
 
-HTTP is allowed only for local development
-HTTPS is required for WebGL and mobile builds
-Secrets are provided exclusively via environment variables
-No AWS credentials are stored in the repository
+- HTTP is allowed only for local development.
+- HTTPS is required for WebGL and mobile builds.
+- Secrets are provided exclusively via environment variables.
+- No AWS credentials are stored in the repository.
 
 --- 
 
@@ -75,10 +71,10 @@ No AWS credentials are stored in the repository
 
 This template intentionally does NOT include:
 Authentication / Authorization
-Database schema
-Gameplay logic
-WebSockets / real-time features
-CI/CD pipelines
+- Database schema
+- Gameplay logic
+- WebSockets / real-time features
+- CI/CD pipelines
 
 These concerns vary per project and should be implemented as needed.
 
@@ -89,4 +85,4 @@ These concerns vary per project and should be implemented as needed.
 This repository was built incrementally.
 Step branches (`step/*`) reflect the development process and can be used as reference points.
 
-The `main` branch always represents the stable template.
+The `master` branch always represents the stable template.
