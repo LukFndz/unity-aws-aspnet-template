@@ -31,29 +31,6 @@ ASP.NET Web API (EC2)
 
 ---
 
-## 📁 Repository Structure
-
-unity-aws-aspnet-template/
-├── backend/
-│ └── src/
-│ ├── Backend.Api
-│ ├── Backend.Application
-│ ├── Backend.Domain
-│ └── Backend.Infrastructure
-│
-├── unity-client/
-│ └── Assets/
-│ └── Scripts/
-│ └── Networking/
-│
-├── docs/
-│ ├── architecture.md
-│ └── aws-env-vars.md
-│
-└── README.md
-
----
-
 ## 🚀 Getting Started
 
 ### Backend (Local)
@@ -104,3 +81,12 @@ WebSockets / real-time features
 CI/CD pipelines
 
 These concerns vary per project and should be implemented as needed.
+
+---
+
+## 🧭 Branching Strategy
+
+This repository was built incrementally.
+Step branches (`step/*`) reflect the development process and can be used as reference points.
+
+The `main` branch always represents the stable template.
